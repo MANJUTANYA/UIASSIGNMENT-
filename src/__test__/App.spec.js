@@ -11,3 +11,13 @@ test("App renders successfully", () => {
   
     expect(element).toHaveTextContent('Manju');
   })
+
+  describe('calculateResults', () => {
+    test.each`
+      amount | expected
+      ${120}  | ${90}
+      
+    `('returns $expected when amount=$120', ({ amount }) => {
+      expect(calculate({ amount })).toEqual(expected);
+    });
+  });
